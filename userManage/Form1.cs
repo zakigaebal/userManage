@@ -221,7 +221,7 @@ namespace userManage
             }
             Query = "select * from dawoon.dc_user WHERE " + field + " like '%" + searchtext + "%' " + flagYN;
            
-
+            //
 
             MySqlConnection con = new MySqlConnection(Connect);
             MySqlCommand Comm = new MySqlCommand(Query, con);

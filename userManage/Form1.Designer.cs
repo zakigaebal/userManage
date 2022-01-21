@@ -32,8 +32,16 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
+            this.labelMemo = new System.Windows.Forms.Label();
+            this.textBoxMemo = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
@@ -44,14 +52,6 @@
             this.textBoxDate = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.labelMemo = new System.Windows.Forms.Label();
-            this.textBoxMemo = new System.Windows.Forms.TextBox();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -103,6 +103,42 @@
             this.panel1.Size = new System.Drawing.Size(796, 39);
             this.panel1.TabIndex = 7;
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(712, 11);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 5;
+            this.buttonSearch.Text = "검색";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // comboBoxSearch
+            // 
+            this.comboBoxSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.comboBoxSearch.FormattingEnabled = true;
+            this.comboBoxSearch.Items.AddRange(new object[] {
+            "회원ID",
+            "등록일",
+            "이름",
+            "연락처",
+            "주소",
+            "이메일",
+            "메모"});
+            this.comboBoxSearch.Location = new System.Drawing.Point(459, 9);
+            this.comboBoxSearch.Name = "comboBoxSearch";
+            this.comboBoxSearch.Size = new System.Drawing.Size(121, 25);
+            this.comboBoxSearch.TabIndex = 4;
+            this.comboBoxSearch.Text = "회원ID";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(586, 12);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 21);
+            this.textBoxSearch.TabIndex = 3;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
             // textBoxId
             // 
             this.textBoxId.Location = new System.Drawing.Point(70, 20);
@@ -132,6 +168,51 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(358, 295);
             this.panel2.TabIndex = 9;
+            // 
+            // checkBoxDelShow
+            // 
+            this.checkBoxDelShow.AutoSize = true;
+            this.checkBoxDelShow.Location = new System.Drawing.Point(279, 276);
+            this.checkBoxDelShow.Name = "checkBoxDelShow";
+            this.checkBoxDelShow.Size = new System.Drawing.Size(76, 16);
+            this.checkBoxDelShow.TabIndex = 35;
+            this.checkBoxDelShow.Text = "삭제 보기";
+            this.checkBoxDelShow.UseVisualStyleBackColor = true;
+            this.checkBoxDelShow.CheckedChanged += new System.EventHandler(this.checkBoxDelShow_CheckedChanged);
+            // 
+            // labelMemo
+            // 
+            this.labelMemo.AutoSize = true;
+            this.labelMemo.Location = new System.Drawing.Point(24, 182);
+            this.labelMemo.Name = "labelMemo";
+            this.labelMemo.Size = new System.Drawing.Size(29, 12);
+            this.labelMemo.TabIndex = 34;
+            this.labelMemo.Text = "메모";
+            // 
+            // textBoxMemo
+            // 
+            this.textBoxMemo.Location = new System.Drawing.Point(70, 179);
+            this.textBoxMemo.Name = "textBoxMemo";
+            this.textBoxMemo.Size = new System.Drawing.Size(260, 21);
+            this.textBoxMemo.TabIndex = 33;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(24, 143);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(41, 12);
+            this.labelEmail.TabIndex = 32;
+            this.labelEmail.Text = "이메일";
+            this.labelEmail.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(70, 140);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(260, 21);
+            this.textBoxEmail.TabIndex = 31;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelAddress
             // 
@@ -219,87 +300,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(399, 295);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(24, 143);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 12);
-            this.labelEmail.TabIndex = 32;
-            this.labelEmail.Text = "이메일";
-            this.labelEmail.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(70, 140);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(260, 21);
-            this.textBoxEmail.TabIndex = 31;
-            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // labelMemo
-            // 
-            this.labelMemo.AutoSize = true;
-            this.labelMemo.Location = new System.Drawing.Point(24, 182);
-            this.labelMemo.Name = "labelMemo";
-            this.labelMemo.Size = new System.Drawing.Size(29, 12);
-            this.labelMemo.TabIndex = 34;
-            this.labelMemo.Text = "메모";
-            // 
-            // textBoxMemo
-            // 
-            this.textBoxMemo.Location = new System.Drawing.Point(70, 179);
-            this.textBoxMemo.Name = "textBoxMemo";
-            this.textBoxMemo.Size = new System.Drawing.Size(260, 21);
-            this.textBoxMemo.TabIndex = 33;
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Location = new System.Drawing.Point(586, 12);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(100, 21);
-            this.textBoxSearch.TabIndex = 3;
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
-            // 
-            // comboBoxSearch
-            // 
-            this.comboBoxSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBoxSearch.FormattingEnabled = true;
-            this.comboBoxSearch.Items.AddRange(new object[] {
-            "회원ID",
-            "등록일",
-            "이름",
-            "연락처",
-            "주소",
-            "이메일",
-            "메모"});
-            this.comboBoxSearch.Location = new System.Drawing.Point(459, 9);
-            this.comboBoxSearch.Name = "comboBoxSearch";
-            this.comboBoxSearch.Size = new System.Drawing.Size(121, 25);
-            this.comboBoxSearch.TabIndex = 4;
-            this.comboBoxSearch.Text = "회원ID";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(712, 11);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 5;
-            this.buttonSearch.Text = "검색";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // checkBoxDelShow
-            // 
-            this.checkBoxDelShow.AutoSize = true;
-            this.checkBoxDelShow.Location = new System.Drawing.Point(279, 276);
-            this.checkBoxDelShow.Name = "checkBoxDelShow";
-            this.checkBoxDelShow.Size = new System.Drawing.Size(76, 16);
-            this.checkBoxDelShow.TabIndex = 35;
-            this.checkBoxDelShow.Text = "삭제 보기";
-            this.checkBoxDelShow.UseVisualStyleBackColor = true;
-            this.checkBoxDelShow.CheckedChanged += new System.EventHandler(this.checkBoxDelShow_CheckedChanged);
             // 
             // label1
             // 

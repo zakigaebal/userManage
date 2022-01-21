@@ -86,6 +86,7 @@ namespace userManage
                 Read = Comm.ExecuteReader();
                 MessageBox.Show("저장완료");
                 con.Close();
+                clear();
                 buttonSearch_Click(sender, e);
             }
             catch (Exception ex)
@@ -110,13 +111,8 @@ namespace userManage
                 MessageBox.Show("삭제완료");
                 con.Close();
                 buttonSearch_Click(sender, e);
-                textBoxId.Text = "";
-                textBoxName.Text = "";
-                textBoxDate.Text = "";
-                textBoxPhone.Text = "";
-                textBoxAddress.Text = "";
-                textBoxEmail.Text = "";
-                textBoxMemo.Text = "";
+                clear();
+              
             }
             catch (Exception ex)
             {
@@ -236,6 +232,17 @@ namespace userManage
             dataGridView1.Columns[dataGridView1.Columns.Count - 3].Visible = false;
             dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
             dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
+        }
+        private void clear()
+        {
+            textBoxName.Text = "";
+            textBoxMemo.Text = "";
+            textBoxPhone.Text = "";
+            textBoxSearch.Text = "";
+            textBoxId.Text = "";
+            textBoxDate.Text = "";
+            textBoxAddress.Text = "";
+            textBoxEmail.Text = "";
         }
     }
 }
